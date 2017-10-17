@@ -1,0 +1,35 @@
+<<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <div v-if="seen">我被显示啦</div>
+            <div :id="id">我是{{id}}</div>
+            <!-- <img v-bind:src="imgs" /> -->
+            <!-- v-bind缩写为： -->
+            <img :src="imgs" />
+
+        </div>
+    </body>
+    <script>
+        let data = {
+            msg: "hello world",
+            seen: true, //false不显示  true显示
+            id: 800,
+            imgs: 'https://cn.vuejs.org/images/logo.png'
+        }
+        let vm = new Vue({
+            el: "#app",
+            data: data
+        })
+    </script>
+
+    </html>
