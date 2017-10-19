@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="box">
+        <input type="button" @click="stark='hello'" value="hello 组件" />
+        <input type="button" @click="stark='myself'" value="myself 组件" />
+        <component v-bind:is="stark"></component>
+    </div>
+
+    <div id="box1">
+        <input type="button" @click="me='liu'" value="刘" />
+        <input type="button" @click="me='xinhong'" value="新红" />
+        <component v-bind:is="me"></component>
+    </div>
+</body>
+<script>
+    let vs = new Vue({
+        el: "#box1",
+        data: {
+            me: 'liu'
+        },
+        components: {
+            liu: {
+                template: '<h1>我姓刘</h1>'
+            },
+            xinhong: {
+                template: '<h1>我叫新红</h1>'
+            }
+        }
+    })
+
+
+
+
+    let vm = new Vue({
+        el: "#box",
+        data: {
+            stark: "hello"
+        },
+        components: {
+            'hello': {
+                template: '<h2>hello</h2>'
+            },
+            'myself': {
+                template: "<h2>myself</h2>"
+            }
+        }
+    })
+</script>
+
+</html>

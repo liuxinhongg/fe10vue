@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- <div id="app">
+        {{num>8 ? "no" : "yes"}}
+        <!-- {{name}} -->
+    <!-- <div v-html="tpl"></div>
+    </div>  -->
+
+    <!-- <div id="box">
+        {{num>10?false:true}}
+        <div v-html="aa"></div>
+    </div> -->
+    <!-- <div id="app">
+        {{num>5?"yes":"no"}}
+        <div v-text="aaa"></div>
+        <div v-html="aaa"></div>
+        <input type="text" v-model="num" />
+    </div> -->
+    <!-- <div id="qq">
+        {{num>9?"大于9":"小于9"}}
+        <div v-text="aa"></div>
+        <div v-html="aa"></div>
+        <input type="text" v-model="num" />
+    </div> -->
+    <!-- <div id="app">
+        <div v-if="seem">我被显示啦</div>
+        <div :di="id">我是{{id}}</div>
+        <img :src="imgs" />
+    </div>-->
+
+    <!-- <div id="a">
+        <liu>你好~</liu>
+    </div>
+    <div id="b">
+        <liu>nishis</liu>
+    </div> -->
+    <div id="box">
+        <div>
+            <liu-xinhong></liu-xinhong>
+            <liu-xinhong/>
+        </div>
+        <script type="x-template" id="tdl">
+            <div>
+                <h2 @lick="change">标题：{{msg}}</h2>
+                <ul>
+                    <li v-for="val in arr">{{val}}</li>
+                </ul>
+            </div>
+        </script>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#box",
+        components: {
+            'liuXinhong': {
+                data() {
+                    return {
+                        msg: "hello word",
+                        arr: ["qq", "vb", "jj", "sdf"]
+                    }
+                },
+                methods: {
+                    chang() {
+                        this.mgs = "changed"
+                    }
+                },
+                template: "#tdl"
+            }
+
+        }
+    })
+</script>
+<!-- <script>
+    Vue.component('liu', {
+        data: function() {
+            return {
+                show: false
+            }
+        },
+        template: `
+        <div><h1>你好~</h1></div>
+        `
+    })
+    new Vue({
+        el: "#app",
+    })
+    new Vue({
+        el: "#b"
+    })
+</script> -->
+<!-- <script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            name: "小伙子",
+            id: "一个阳光的影子",
+            imgs: "https://diycode.b0.upaiyun.com/photo/2017/eb1088e69b472c4401d0a7f665b3e2a2.png"
+        }
+    })
+</script> -->
+<!-- 双向数据绑定 -->
+<!-- <script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            name: "刘新红",
+            num: 11,
+            aaa: `<div><h1>hello mather</h1></div>`
+
+        }
+    })
+
+    let vs = new Vue({
+        el: "#qq",
+        data: {
+            name: "liuxinhong",
+            num: 7,
+            aa: `
+            <div><h1>追随风飘的蒲公英</h1></div>
+            `
+        }
+    })
+</script> -->
+<!-- 插值 -->
+<!-- <script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            name: "xiaomei",
+            num: 18,
+            tpl: `
+            <div><h1>你好！sunshine~</h1></div>
+            `
+        }
+    })
+
+    let vm = new Vue({
+        el: "#box",
+        data: {
+            name: "qiku",
+            num: 11,
+            aa: `
+           <div><h1>welcome sunshine</h1></div>
+           `
+        }
+    })
+</script> -->
+<!-- <script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            name: "huangyingyun",
+            age: 18
+        }
+    })
+    let vm=new Vue({
+        el:"#app",
+        data:{
+            name:"liuxinhong",
+        }
+    })
+    vm.name = "任小梅"
+</script> -->
+
+
+</html>
